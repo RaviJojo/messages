@@ -16,25 +16,23 @@ content = gets.chomp
 puts ""
 print "Sending message..."
 
-this_message = Message.new
-this_message.to = to
-this_message.from = from
-this_message.content = content
+# this_message = Message.new
+# this_message.to = to
+# this_message.from = from
+# this_message.content = content
 
 uri = URI("http://localhost:9292/")
 
 http = Net::HTTP.new(uri.host, uri.port)
   ## gets made from uri above (?)
 request = Net::HTTP::Post.new(uri.request_uri)
-request.set_form_data({:to => this_message.to, :from => this_message.from, 
-  :content => this_message.content})
-# /.set_form_data({....})
+binding.pry
 
-# binding.pry
+request.set_form_data({"to"=>to, "from"=>from, "content"=>content})
+
 
 response = http.request(request)
-
-binding.pry
+  # this comes from the post method
 
 if response.body == "success"
   puts "done!"

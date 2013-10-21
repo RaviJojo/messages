@@ -46,15 +46,24 @@ class MessageApp < Sinatra::Base
   end
 
   post '/' do
-    # catch set_form_data stuff
-    [200 ,{},[params[:to],params[:from],params[:content]] ]
 
-    # takes data from an instance of Message
-    ##> gets this from the POST stuff
-    # creates a message from this data
+    # make an instance out of these:
+    a_message = Message.new
+    a_message.to = params["content"][:to]
+    a_message.from = params["content"][:from]
+    a_message.content = params["content"][:content]
+
+    binding.pry
+
+    # if instance of object is saved to the db
+    "success"
+    # else fails.
+
+    # returns the response from the server
   end
 
 end
+
 
 DataMapper.finalize
 DataMapper.auto_upgrade!

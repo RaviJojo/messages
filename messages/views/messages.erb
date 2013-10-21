@@ -9,12 +9,14 @@
     <div class="header">My Messages</div>
 
     <div id="message-stream">
-      <%
+      <% Message.all.each do |message| %>
+        <%= message.inspect %>
         # for each message in @messages
         # render the template below
         # filling the content from
         # the message
-      %>
+
+      <% end %>
 
       <div class="message">
         <a href="" class="close"></a>
