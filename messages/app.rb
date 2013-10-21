@@ -45,6 +45,15 @@ class MessageApp < Sinatra::Base
     "Database migrated! All tables reset."
   end
 
+  post '/' do
+    this_message = Message.new
+    this_message.post_message
+    # takes data from an instance of Message
+    ##> gets this from the POST stuff
+    # creates a message from this data
+  end
+
+
 end
 
 DataMapper.finalize

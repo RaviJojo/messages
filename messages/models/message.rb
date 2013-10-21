@@ -5,9 +5,11 @@ class Message
   property :from, String          # A short string of text
   property :content, Text         # A longer text block
   property :created_at, DateTime  # Auto assigns data/time
+  property :to, String
 
-  def post_message
 
+  def post_message_content
+    
   end
 
 end
