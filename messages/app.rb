@@ -50,7 +50,7 @@ class MessageApp < Sinatra::Base
     # catch set_form_data stuff
     m = Message.create(:to => params["to"], :from => params["from"], :content => params["content"])
  
-    
+    "success"
     # takes data from an instance of Message
     ##> gets this from the POST stuff
     # creates a message from this data
