@@ -49,14 +49,8 @@ class MessageApp < Sinatra::Base
 
     # this works:
     a = Message.create(:to => params["to"], :from => params["from"], :content => params["content"])
-      # , "from"=> from, "content"=> content)
 
-
-    # if instance of object is saved to the db
     "success"
-    # else fails.
-
-    # returns the response from the server
   end
 
 end

@@ -20,7 +20,6 @@ uri = URI("http://localhost:9292/")
 
 res = Net::HTTP.post_form(uri, {"to"=>to, "from"=>from, "content"=>content})
 
-
 if res.body == "success"
   puts "done!"
 else
