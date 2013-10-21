@@ -6,4 +6,8 @@ class Message
   property :content, Text         # A longer text block
   property :created_at, DateTime  # Auto assigns data/time
 
+  def post_message
+
+  end
+
 end
