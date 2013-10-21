@@ -7,4 +7,5 @@ class Message
   property :created_at, DateTime  # Auto assigns data/time
   property :to, String
 
+
 end

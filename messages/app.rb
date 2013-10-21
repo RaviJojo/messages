@@ -47,13 +47,10 @@ class MessageApp < Sinatra::Base
 
   post '/' do
 
-    # make an instance out of these:
-    a_message = Message.new
-    a_message.to = params["content"][:to]
-    a_message.from = params["content"][:from]
-    a_message.content = params["content"][:content]
+    # this works:
+    a = Message.create(:to => params["to"], :from => params["from"], :content => params["content"])
+      # , "from"=> from, "content"=> content)
 
-    binding.pry
 
     # if instance of object is saved to the db
     "success"
