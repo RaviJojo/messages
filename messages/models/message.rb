@@ -8,8 +8,8 @@ class Message
   property :to, String
 
 
-  def post_message_content
-    
+  def post_message
+    "this is a test"
   end
 
 end

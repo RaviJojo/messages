@@ -46,13 +46,13 @@ class MessageApp < Sinatra::Base
   end
 
   post '/' do
-    this_message = Message.new
-    this_message.post_message
+    # catch set_form_data stuff
+    [200 ,{},[params[:to],params[:from],params[:content]] ]
+
     # takes data from an instance of Message
     ##> gets this from the POST stuff
     # creates a message from this data
   end
-
 
 end
 
