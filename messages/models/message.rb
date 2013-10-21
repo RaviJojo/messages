@@ -7,9 +7,4 @@ class Message
   property :created_at, DateTime  # Auto assigns data/time
   property :to, String
 
-
-  def post_message
-    "this is a test"
-  end
-
 end

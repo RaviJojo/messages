@@ -23,6 +23,7 @@ require "sinatra/reloader"
 require 'data_mapper'
 require 'sqlite3'
 
+
 require_relative 'models/message'
 
 # this sets up an in-memory database
@@ -47,8 +48,9 @@ class MessageApp < Sinatra::Base
 
   post '/' do
     # catch set_form_data stuff
-    [200 ,{},[params[:to],params[:from],params[:content]] ]
-
+    m = Message.create(:to => params["to"], :from => params["from"], :content => params["content"])
+ 
+    
     # takes data from an instance of Message
     ##> gets this from the POST stuff
     # creates a message from this data
