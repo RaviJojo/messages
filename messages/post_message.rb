@@ -21,9 +21,8 @@ uri = URI("http://localhost:9292/")
 
 
 response = Net::HTTP.post_form(uri,
-  {"content" => content, "to" => to, "from" => from}
+  {:content => content, :to => to, :from => from}
 )
-
 
 if response.body == "success"
   puts "done!"

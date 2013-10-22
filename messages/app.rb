@@ -18,10 +18,12 @@
 # 3. You need to edit messages.erb to iterate
 # through all the @messages and print out the
 # data
+require 'pry'
 require 'sinatra'
 require "sinatra/reloader"
 require 'data_mapper'
 require 'sqlite3'
+
 
 
 require_relative 'models/message'
@@ -47,9 +49,9 @@ class MessageApp < Sinatra::Base
   end
 
   post '/' do
+    #binding.pry
     # catch set_form_data stuff
-    m = Message.create(:to => params["to"], :from => params["from"], :content => params["content"])
- 
+    Message.create(:to => params[:to], :from => params[:from], :content => params[:content])
     "success"
     # takes data from an instance of Message
     ##> gets this from the POST stuff
